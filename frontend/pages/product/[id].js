@@ -88,10 +88,10 @@ export default function ProductPage() {
 
   const initiatePayment = (order) => {
     const options = {
-      key: "rzp_test_1234567890", // Replace with your Razorpay key
+      key: "rzp_test_Sj1qqe8BTgyBDw", // Your Razorpay test key
       amount: order.amount,
       currency: "INR",
-      name: "Your Store Name",
+      name: "Saree Collection",
       description: `${product.name} x ${quantity}`,
       order_id: order.id,
       handler: async function (response) {
@@ -160,7 +160,7 @@ export default function ProductPage() {
             animation: 'spin 1s linear infinite',
             margin: '0 auto'
           }}></div>
-          <p style={{ marginTop: '16px', color: '#718096' }}>Loading product...</p>
+          <p style={{ marginTop: '16px', color: '#718096' }}>Loading saree...</p>
         </div>
       </div>
     );
@@ -170,8 +170,8 @@ export default function ProductPage() {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#f7fafc', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1a202c', marginBottom: '16px' }}>Product Not Found</h1>
-          <p style={{ color: '#718096' }}>The product you're looking for doesn't exist.</p>
+          <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#1a202c', marginBottom: '16px' }}>Saree Not Found</h1>
+          <p style={{ color: '#718096' }}>The saree you're looking for doesn't exist.</p>
           <Link
             href="/"
             style={{
@@ -185,7 +185,7 @@ export default function ProductPage() {
               textDecoration: 'none'
             }}
           >
-            Back to Products
+            Back to Saree Collection
           </Link>
         </div>
       </div>
@@ -205,10 +205,10 @@ export default function ProductPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </Link>
-            <div style={{ width: '32px', height: '32px', backgroundColor: '#48bb78', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: '12px' }}>
-              <span style={{ color: 'white', fontWeight: 'bold', fontSize: '14px' }}>🛒</span>
+            <div style={{ width: '32px', height: '32px', backgroundColor: '#d53f8c', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: '12px' }}>
+              <span style={{ color: 'white', fontWeight: 'bold', fontSize: '14px' }}>�</span>
             </div>
-            <h1 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1a202c' }}>Product Details</h1>
+            <h1 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#1a202c' }}>Saree Details</h1>
           </div>
           <CartIcon />
         </div>
@@ -216,9 +216,35 @@ export default function ProductPage() {
 
       {/* Product Details */}
       <div style={{ maxWidth: '28rem', margin: '16px auto', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 1px 3px 0 rgba(0, 0, 0, 0.1)', overflow: 'hidden' }}>
-        {/* Product Image Placeholder */}
-        <div style={{ width: '100%', height: '256px', background: 'linear-gradient(to bottom right, #e2e8f0, #cbd5e0)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <span style={{ fontSize: '4rem' }}>📱</span>
+        {/* Saree Image */}
+        <div style={{ width: '100%', height: '400px', position: 'relative', background: 'linear-gradient(to bottom right, #fbb6ce, #d6bcfa)' }}>
+          <img 
+            src={`http://localhost:5001/sarees/${product.image}`}
+            alt={product.name}
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'cover',
+              transition: 'transform 0.3s ease'
+            }}
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'flex';
+            }}
+          />
+          <div style={{ 
+            width: '100%', 
+            height: '100%', 
+            background: 'linear-gradient(to bottom right, #fbb6ce, #d6bcfa)', 
+            display: 'none', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            position: 'absolute',
+            top: 0,
+            left: 0
+          }}>
+            <span style={{ fontSize: '6rem' }}>�</span>
+          </div>
         </div>
         
         <div style={{ padding: '24px' }}>
@@ -226,10 +252,10 @@ export default function ProductPage() {
           <p style={{ color: '#718096', marginBottom: '16px' }}>{product.description}</p>
           
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
-            <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#48bb78' }}>
+            <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#d53f8c' }}>
               ₹{product.price.toLocaleString()}
             </span>
-            <span style={{ fontSize: '0.875rem', color: '#a0aec0' }}>per item</span>
+            <span style={{ fontSize: '0.875rem', color: '#a0aec0' }}>per saree</span>
           </div>
 
           {/* Quantity Selector */}
@@ -278,7 +304,7 @@ export default function ProductPage() {
           <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '16px', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <span style={{ fontSize: '1.125rem', fontWeight: '600' }}>Total:</span>
-              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#48bb78' }}>
+              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#d53f8c' }}>
                 ₹{totalPrice.toLocaleString()}
               </span>
             </div>
@@ -323,7 +349,7 @@ export default function ProductPage() {
                 fontWeight: '600',
                 border: 'none',
                 cursor: ordering ? 'not-allowed' : 'pointer',
-                backgroundColor: ordering ? '#a0aec0' : '#48bb78',
+                backgroundColor: ordering ? '#a0aec0' : '#d53f8c',
                 color: 'white',
                 transition: 'background-color 0.15s ease-in-out'
               }}
@@ -343,7 +369,7 @@ export default function ProductPage() {
           <div style={{ marginTop: '16px', textAlign: 'center' }}>
             <Link
               href="/cart"
-              style={{ color: '#4299e1', fontWeight: '500', textDecoration: 'none' }}
+              style={{ color: '#d53f8c', fontWeight: '500', textDecoration: 'none' }}
             >
               View Cart & Checkout
             </Link>
@@ -373,7 +399,7 @@ export default function ProductPage() {
           </div>
           <div>
             <div style={{ fontSize: '1.5rem', marginBottom: '4px' }}>💯</div>
-            <p style={{ fontSize: '0.75rem', color: '#718096' }}>Genuine Products</p>
+            <p style={{ fontSize: '0.75rem', color: '#718096' }}>Authentic Sarees</p>
           </div>
         </div>
       </div>

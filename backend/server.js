@@ -2,6 +2,7 @@ const express = require('express');
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -11,6 +12,9 @@ const PORT = process.env.PORT || 5001;
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve saree images statically
+app.use('/sarees', express.static(path.join(__dirname, 'public/sarees')));
 
 // Initialize Razorpay
 const razorpay = new Razorpay({
@@ -22,24 +26,103 @@ const razorpay = new Razorpay({
 const products = {
   '1': {
     id: '1',
-    name: 'Premium Headphones',
-    price: 2999,
-    description: 'High-quality wireless headphones with noise cancellation',
-    image: '/images/headphones.jpg'
+    name: 'Elegant Silk Saree - Red & Gold',
+    price: 3500,
+    description: 'Beautiful traditional silk saree with intricate gold border work, perfect for festivals and special occasions',
+    image: 'WhatsApp Image 2026-04-25 at 10.23.25.jpeg',
+    category: 'saree',
+    fabric: 'Silk',
+    color: 'Red & Gold'
   },
   '2': {
     id: '2',
-    name: 'Smart Watch',
-    price: 8999,
-    description: 'Feature-rich smartwatch with health monitoring',
-    image: '/images/smartwatch.jpg'
+    name: 'Designer Cotton Saree - Blue',
+    price: 2200,
+    description: 'Comfortable cotton saree with beautiful print design, ideal for daily wear and office',
+    image: 'WhatsApp Image 2026-04-27 at 07.12.47.jpeg',
+    category: 'saree',
+    fabric: 'Cotton',
+    color: 'Blue'
   },
   '3': {
     id: '3',
-    name: 'Bluetooth Speaker',
-    price: 1999,
-    description: 'Portable wireless speaker with excellent sound quality',
-    image: '/images/speaker.jpg'
+    name: 'Traditional Banarasi Saree',
+    price: 5500,
+    description: 'Authentic Banarasi saree with rich zari work and traditional motifs',
+    image: 'WhatsApp Image 2026-04-27 at 07.12.48.jpeg',
+    category: 'saree',
+    fabric: 'Banarasi Silk',
+    color: 'Maroon & Gold'
+  },
+  '4': {
+    id: '4',
+    name: 'Floral Print Chiffon Saree',
+    price: 1800,
+    description: 'Lightweight chiffon saree with beautiful floral prints, perfect for parties',
+    image: 'WhatsApp Image 2026-04-27 at 07.12.49.jpeg',
+    category: 'saree',
+    fabric: 'Chiffon',
+    color: 'Multi-color'
+  },
+  '5': {
+    id: '5',
+    name: 'Georgette Party Wear Saree',
+    price: 2800,
+    description: 'Elegant georgette saree with embellished border, ideal for evening parties',
+    image: 'WhatsApp Image 2026-04-27 at 07.12.50.jpeg',
+    category: 'saree',
+    fabric: 'Georgette',
+    color: 'Pink & Silver'
+  },
+  '6': {
+    id: '6',
+    name: 'Handloom Cotton Saree',
+    price: 1600,
+    description: 'Pure handloom cotton saree supporting traditional weavers',
+    image: 'WhatsApp Image 2026-04-27 at 07.12.54.jpeg',
+    category: 'saree',
+    fabric: 'Handloom Cotton',
+    color: 'Green'
+  },
+  '7': {
+    id: '7',
+    name: 'Bandhani Tie-Dye Saree',
+    price: 2100,
+    description: 'Traditional Bandhani tie-dye saree from Rajasthan with vibrant colors',
+    image: 'WhatsApp Image 2026-04-27 at 07.13.15 (1).jpeg',
+    category: 'saree',
+    fabric: 'Cotton',
+    color: 'Yellow & Red'
+  },
+  '8': {
+    id: '8',
+    name: 'Chanderi Silk Saree',
+    price: 3200,
+    description: 'Luxurious Chanderi silk saree with subtle shimmer and elegant drape',
+    image: 'WhatsApp Image 2026-04-27 at 07.13.15.jpeg',
+    category: 'saree',
+    fabric: 'Chanderi Silk',
+    color: 'Cream & Gold'
+  },
+  '9': {
+    id: '9',
+    name: 'Kanjivaram Silk Saree',
+    price: 6500,
+    description: 'Premium Kanjivaram silk saree with heavy zari work, perfect for weddings',
+    image: 'WhatsApp Image 2026-04-27 at 12.17.53.jpeg',
+    category: 'saree',
+    fabric: 'Kanjivaram Silk',
+    color: 'Purple & Gold'
+  },
+  '10': {
+    id: '10',
+    name: 'Modern Fusion Saree',
+    price: 2500,
+    description: 'Contemporary design saree blending traditional and modern elements',
+    image: 'WhatsApp Image 2026-04-27 at 20.48.43.jpeg',
+    category: 'saree',
+    fabric: 'Crepe',
+    color: 'Black & Silver'
   }
 };
 
@@ -228,6 +311,7 @@ app.post('/api/create-order', async (req, res) => {
       }
     };
 
+    // Create Razorpay order
     const order = await razorpay.orders.create(options);
     
     // Create order record in "database"
