@@ -91,7 +91,7 @@ export default function ProductPage() {
       key: "rzp_test_Sj1qqe8BTgyBDw", // Your Razorpay test key
       amount: order.amount,
       currency: "INR",
-      name: "Saree Collection",
+      name: "OmSaiRam HandLooms",
       description: `${product.name} x ${quantity}`,
       order_id: order.id,
       handler: async function (response) {
@@ -369,7 +369,7 @@ export default function ProductPage() {
           <div style={{ marginTop: '16px', textAlign: 'center' }}>
             <Link
               href="/cart"
-              style={{ color: '#d53f8c', fontWeight: '500', textDecoration: 'none' }}
+              style={{ color: '#2d5016', fontWeight: '500', textDecoration: 'none' }}
             >
               View Cart & Checkout
             </Link>

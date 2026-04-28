@@ -68,7 +68,7 @@ export default function Cart() {
       key: "rzp_test_Sj1qqe8BTgyBDw", // Your Razorpay test key
       amount: order.amount,
       currency: "INR",
-      name: "Saree Collection",
+      name: "OmSaiRam HandLooms",
       description: `Cart Checkout - ${getTotalItems()} items`,
       order_id: order.id,
       handler: async function (response) {

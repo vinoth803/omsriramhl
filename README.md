@@ -1,6 +1,6 @@
-# WhatsApp Store Integration
+# OmSaiRam HandLooms - E-commerce Platform
 
-A complete e-commerce solution that allows customers to browse products, make payments, and get redirected back to WhatsApp with tracking information.
+A complete e-commerce platform for OmSaiRam HandLooms that allows customers to browse saree collections, make secure payments, and get order confirmations via WhatsApp.
 
 ## Features
 

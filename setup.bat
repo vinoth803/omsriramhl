@@ -1,6 +1,6 @@
 @echo off
 echo ====================================
-echo WhatsApp Store Setup Script
+echo OmSaiRam HandLooms Setup Script
 echo ====================================
 echo.
 
@@ -56,7 +56,7 @@ echo 1. Update Razorpay keys in backend/.env
 echo 2. Start backend: cd backend && npm run dev
 echo 3. Start frontend: cd frontend && npm run dev
 echo.
-echo Your WhatsApp store will be available at:
+echo Your OmSaiRam HandLooms store will be available at:
 echo http://localhost:3000
 echo.
 pause

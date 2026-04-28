@@ -7,7 +7,11 @@ export default function CartIcon() {
 
   return (
     <Link href="/cart" className="relative">
-      <div className="flex items-center space-x-1 bg-blue-500 text-white px-3 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+      <div className="flex items-center space-x-1 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105"
+           style={{
+             background: 'linear-gradient(135deg, #2d5016 0%, #3e5622 100%)',
+             color: 'white'
+           }}>
         <svg 
           className="w-5 h-5" 
           fill="none" 

@@ -1,6 +1,6 @@
-# Adding New Items to Saree Catalog
+# Adding New Items to OmSaiRam HandLooms Catalog
 
-This guide explains how to add new saree items to the e-commerce catalog, including image preparation and code changes.
+This guide explains how to add new saree items to the OmSaiRam HandLooms e-commerce catalog, including image preparation and code changes.
 
 ## Overview
 
