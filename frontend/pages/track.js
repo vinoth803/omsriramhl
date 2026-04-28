@@ -22,9 +22,14 @@ export default function Track() {
             <Link href="/" className="text-3xl font-playfair font-bold" style={{ color: '#2d5016' }}>
               OmSaiRam HandLooms
             </Link>
-            <Link href="/cart" className="font-medium transition-colors" style={{ color: '#2d5016' }}>
-              Cart
-            </Link>
+            <nav className="flex items-center space-x-6">
+              <Link href="/materials" className="font-medium transition-colors hover:scale-105" style={{ color: '#2d5016' }}>
+                Materials
+              </Link>
+              <Link href="/cart" className="font-medium transition-colors hover:scale-105" style={{ color: '#2d5016' }}>
+                Cart
+              </Link>
+            </nav>
           </div>
         </div>
       </header>

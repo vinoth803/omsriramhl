@@ -241,7 +241,7 @@ export default function TrackOrder() {
                   <div className="border-t pt-3" style={{ borderColor: 'rgba(212, 197, 169, 0.5)' }}>
                     <div className="flex justify-between items-center font-bold text-lg">
                       <span style={{ color: '#2d5016' }}>Total</span>
-                      <span className="text-green-600">₹{order.total}</span>
+                      <span style={{ color: '#0f172a', fontWeight: '900', textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)', fontFamily: 'Poppins, sans-serif' }}>₹{order.total}</span>
                     </div>
                   </div>
                 </div>

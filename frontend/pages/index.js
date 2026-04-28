@@ -56,8 +56,22 @@ export default function Home() {
               </h1>
               <div className="flex items-center space-x-6">
                 <Link 
+                  href="/" 
+                  className="font-medium transition-colors hover:scale-105 px-3 py-2 border-b-2 border-amber-500"
+                  style={{ color: '#2d5016' }}
+                >
+                  Collection
+                </Link>
+                <Link 
+                  href="/materials" 
+                  className="font-medium transition-colors hover:scale-105 px-3 py-2"
+                  style={{ color: '#2d5016' }}
+                >
+                  Materials
+                </Link>
+                <Link 
                   href="/track" 
-                  className="font-medium transition-colors"
+                  className="font-medium transition-colors hover:scale-105 px-3 py-2"
                   style={{ color: '#2d5016' }}
                 >
                   Track Order
@@ -81,6 +95,48 @@ export default function Home() {
             <div className="mt-8 flex justify-center">
               <div className="bg-gradient-to-r from-yellow-400 to-green-400 px-6 py-2 rounded-full text-sm font-semibold shadow-lg" style={{ color: '#2d5016' }}>
                 ✨ New Arrivals Every Week
+              </div>
+            </div>
+          </div>
+
+          {/* Materials Showcase Banner */}
+          <div className="mb-12 fade-in">
+            <div className="glass-saree rounded-xl p-8 text-center">
+              <div className="flex flex-col md:flex-row items-center justify-between">
+                <div className="md:w-2/3 text-left">
+                  <h3 className="text-2xl font-playfair font-bold mb-2" style={{ color: '#2d5016' }}>
+                    🎨 Explore Our Materials Collection
+                  </h3>
+                  <p className="mb-4" style={{ color: '#3e5622' }}>
+                    Browse through our extensive range of sarees, chudidar materials, silk fabrics, and cotton collections
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <span className="px-3 py-1 rounded-full text-xs" style={{ background: '#2d501620', color: '#2d5016' }}>
+                      🥻 Traditional Sarees
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs" style={{ background: '#7c2d9220', color: '#7c2d92' }}>
+                      👗 Chudidar Materials
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs" style={{ background: '#b4530920', color: '#b45309' }}>
+                      ✨ Pure Silk
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs" style={{ background: '#0f766e20', color: '#0f766e' }}>
+                      🌿 Cotton Collection
+                    </span>
+                  </div>
+                </div>
+                <div className="md:w-1/3 text-center">
+                  <Link
+                    href="/materials"
+                    className="inline-block px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                    style={{
+                      background: 'linear-gradient(135deg, #2d5016 0%, #3e5622 100%)',
+                      color: 'white'
+                    }}
+                  >
+                    View All Materials →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -125,24 +181,26 @@ export default function Home() {
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2 leading-relaxed">
                   {product.description}
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-3xl font-bold gradient-text font-playfair">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-green-600 bg-clip-text text-transparent">
                     ₹{product.price.toLocaleString()}
                   </span>
-                  <div className="flex space-x-2">
-                    <Link 
-                      href={`/product/${product.id}`}
-                      className="btn btn-primary text-sm px-4 py-2"
-                    >
-                      View Details
-                    </Link>
-                    <button
-                      onClick={() => handleAddToCart(product)}
-                      className="btn btn-saree text-sm px-4 py-2"
-                    >
-                      Add to Cart
-                    </button>
-                  </div>
+                </div>
+                
+                {/* Thin Tube Button Bar */}
+                <div className="flex rounded-full overflow-hidden border border-gray-300 shadow-md">
+                  <Link 
+                    href={`/product/${product.id}`}
+                    className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-900 py-2 px-4 text-sm font-semibold text-center transition-all duration-200 border-r border-gray-300"
+                  >
+                    View Details
+                  </Link>
+                  <button
+                    onClick={() => handleAddToCart(product)}
+                    className="flex-1 bg-gradient-to-r from-amber-200 to-green-200 hover:from-amber-300 hover:to-green-300 text-gray-900 py-2 px-4 text-sm font-semibold text-center transition-all duration-200 shadow-lg"
+                  >
+                    Add to Cart
+                  </button>
                 </div>
               </div>
             </div>

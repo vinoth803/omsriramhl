@@ -252,10 +252,10 @@ export default function ProductPage() {
           <p style={{ color: '#718096', marginBottom: '16px' }}>{product.description}</p>
           
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '24px' }}>
-            <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#d53f8c' }}>
+            <span style={{ fontSize: '1.5rem', fontWeight: '900', color: '#0f172a', textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)', fontFamily: 'Poppins, sans-serif' }}>
               ₹{product.price.toLocaleString()}
             </span>
-            <span style={{ fontSize: '0.875rem', color: '#a0aec0' }}>per saree</span>
+            <span style={{ fontSize: '0.875rem', color: '#3e5622' }}>per saree</span>
           </div>
 
           {/* Quantity Selector */}
@@ -303,8 +303,8 @@ export default function ProductPage() {
           {/* Total */}
           <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '16px', marginBottom: '24px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <span style={{ fontSize: '1.125rem', fontWeight: '600' }}>Total:</span>
-              <span style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#d53f8c' }}>
+              <span style={{ fontSize: '1.125rem', fontWeight: '600', color: '#2d5016' }}>Total:</span>
+              <span style={{ fontSize: '1.25rem', fontWeight: '900', color: '#0f172a', textShadow: '0 2px 4px rgba(0, 0, 0, 0.15)', fontFamily: 'Poppins, sans-serif' }}>
                 ₹{totalPrice.toLocaleString()}
               </span>
             </div>
